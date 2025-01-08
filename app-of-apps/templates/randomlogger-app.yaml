@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: giropops-senhas
+  name: random-logger
   namespace: argocd
 spec:
   source:
     helm: {}
-    path: giropops-senhas/helm
+    path: random-logger
     repoURL: https://github.com/alextreviso/gitops-argocd
     targetRevision: feat/day2
   destination:
-    namespace: giropops-senhas
+    namespace: random-logger
     server: https://kubernetes.default.svc
   project: default
   syncPolicy:
